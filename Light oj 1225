@@ -1,0 +1,29 @@
+#include<stdio.h>
+int main()
+{
+    int number, rem, sum, take,t, i ;
+    scanf("%d",&t);
+    for(  i = 1; i<= t; i++ )
+    {
+         sum = 0;
+         scanf("%d",&number);
+          take = number;
+            while( take != 0 )
+            {
+                rem = take % 10;
+ 
+                sum = sum * 10 + rem;
+ 
+                take /= 10;
+            }
+        if( sum == number )
+        {
+            printf("Case %d: Yes\n",i);
+        }
+        else
+        {
+            printf("Case %d: No\n",i);
+        }
+      }
+    return 0;
+}
