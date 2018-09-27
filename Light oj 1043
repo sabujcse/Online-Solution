@@ -1,0 +1,19 @@
+#include<bits/stdc++.h>
+using namespace std;
+ 
+int main()
+{
+    int test;
+    double A, B, C, AD, ratio;
+    cin>>test;
+    for( int i = 1; i<= test; i++ )
+    {
+        cin>>A>>B>>C>>ratio;
+ 
+        ratio = ratio /(ratio + 1);
+ 
+        AD = A * sqrt(ratio);
+        printf("Case %d: %lf\n",i,AD);
+    }
+    return 0;
+}
