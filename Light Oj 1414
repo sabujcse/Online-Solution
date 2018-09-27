@@ -1,0 +1,32 @@
+#include<bits/stdc++.h>
+using namespace std;
+ 
+bool isleap(long long int year)
+{
+    if(((year%4==0)&&(year%100!=0))||(year%400==0)) return true;
+    return false;
+}
+int main()
+{
+    long long int t, year1, year2, day1, day2;
+    scanf("%d",&t);
+    char date1[100], date2[100], month1[ 100 ], koma,koma2, month2[100], coma;
+    //scanf("%d",&t);
+    getchar();
+    for( int i = 1; i<= t; i++ )
+    {
+        gets(date1);
+        sscanf(date1, "%s %lld%c %lld", month1, &day1, &koma, &year1 );
+        gets(date2);
+        sscanf(date2, "%s %lld%c %lld", month2, &day2, &koma2, &year2 );
+        if(strcmp(month1,"January")!=0 && strcmp(month1,"February")!=0) year1++;
+        if(strcmp(month2,"January")==0 || (strcmp(month2,"February")==0 && day2<29)) year2--;
+        int four = ( year2 / 4) - (( year1 - 1 )/4);
+        int hand = ( year2 / 100) - (( year1 - 1 )/100);
+        int fourhand = ( year2 / 400) - (( year1 - 1 )/400);
+ 
+        int cyear = four - hand + fourhand;
+        printf("Case %d: %d\n",i,cyear);
+    }
+    return 0;
+}
