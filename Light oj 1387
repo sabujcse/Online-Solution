@@ -1,0 +1,29 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+     int t, number, sum = 0,c;
+     string s;
+     cin>>c;
+    for( int j = 1; j<= c; j++ )
+    {
+      cin>>t;
+      printf("Case %d:\n",j);
+      for( int i = 1; i<= t; i++ )
+      {
+ 
+        cin>>s;
+        if(s=="donate")
+        {
+           cin>>number;
+             sum+=number;
+        }
+        else
+        {
+           printf("%d\n",sum);
+        }
+       }
+        sum = 0;
+    }
+    return 0;
+}
