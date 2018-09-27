@@ -1,0 +1,53 @@
+#include<stdio.h>
+
+int main()
+{
+    int a,b,max=-1,i,cont=1;
+    while(scanf("%d%d",&a,&b)!=EOF)
+    {
+        if(a<b)
+        {
+        max=-1;
+        for(i=a;i<=b;i++)
+        {
+            int n=i;
+            cont=1;
+            while(n!=1)
+            {
+               if(n%2==0)
+                   n=n/2;
+               else
+                n=3*n+1;
+               cont++;
+            }
+            if(max<cont)
+                max=cont;
+        }
+        }
+        else
+        {
+            {
+        max=-1;
+        for(i=b;i<=a;i++)
+        {
+            int n=i;
+            cont=1;
+            while(n!=1)
+            {
+               if(n%2==0)
+                   n=n/2;
+               else
+                n=3*n+1;
+               cont++;
+            }
+            if(max<cont)
+                max=cont;
+        }
+        }
+
+        }
+         printf("%d %d %d\n",a,b,max);
+    }
+
+    return 0;
+}
