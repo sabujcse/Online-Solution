@@ -1,0 +1,78 @@
+#include<bits/stdc++.h>
+using namespace std;
+#include<vector>
+#include<queue>
+#include<map>
+#include<set>
+ 
+#define   sc    scanf
+#define   pf    printf
+#define   pb    push_back
+#define   pop   pp
+int main()
+{
+    string s;
+    int ary[ 101 ];
+    int test, n, query, x, y, dq, mq, kq, py, pz;
+    sc("%d",&test);
+    for( int k = 1; k<= test; k++ )
+    {
+        sc("%d %d",&n, &query);
+        for( int i = 0; i < n; i++ )
+        {
+            sc("%d",&ary[ i ]);
+        }
+        while( query -- )
+        {
+            cin>>s;
+            if( s[ 0 ] == 'S' )
+            {
+                sc("%d", &dq);
+                for( int i = 0; i < n; i++ )
+                {
+                    ary[ i ] = ary[ i ] + dq;
+                }
+            }
+           else if( s[ 0 ] == 'M' )
+            {
+                sc("%d",&mq);
+ 
+                for( int i = 0; i < n ; i++ )
+                {
+                    ary[ i ] = ary[ i ] * mq;
+                }
+            }
+        else if( s[ 0 ] == 'D' )
+        {
+            sc("%d",&kq);
+            for( int i = 0; i < n ; i++ )
+            {
+                ary [ i ] = ary[ i ] / kq;
+            }
+        }
+        else if( s[ 0 ] == 'R' )
+        {
+            reverse(ary,ary+n);
+        }
+        else if( s[ 0 ] == 'P' )
+        {
+            sc("%d %d",&py,&pz);
+            swap(ary[ py ], ary[ pz ]);
+        }
+        }
+        pf("Case %d:\n",k);
+        for( int j = 0; j < n; j++ )
+        {
+               if( j == ( n - 1 ) )
+               {
+                pf("%d\n", ary[ j ]);
+               }
+               else
+               {
+                  pf("%d ", ary[ j ]);
+               }
+        }
+    }
+    return 0;
+}
+ 
