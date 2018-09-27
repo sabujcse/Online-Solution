@@ -1,0 +1,35 @@
+#include<stdio.h>
+int main()
+{
+    long long int t, i;
+    char ch[7];
+    int n;
+    scanf("%lld",&t);
+    for(  i = 1; i<= t; i++ )
+    {
+ 
+        scanf("%d%s",&n,ch);
+        //if(!strcmp(ch,"Alice"))
+        if( ch[ 0 ] == 'A')
+        {
+            if( n%3 == 1 )
+            {
+                printf("Case %d: Bob\n",i);
+            }
+            else
+            {
+                printf("Case %d: Alice\n",i);
+            }
+        }
+        else
+            if( n % 3 == 0 )
+            {
+                printf("Case %d: Alice\n",i);
+            }
+            else
+            {
+                printf("Case %d: Bob\n",i);
+            }
+        }
+    return 0;
+}
