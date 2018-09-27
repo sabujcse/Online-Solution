@@ -1,0 +1,78 @@
+/// Codeforeces return_SS, Light oj return_SS,uva sabuj_coder;
+///URI sabujbd,Timus return_SS;
+///********** BE CODE FOR YOURSELF*******
+///*************************************
+/**
+           Sabuj sarker
+            def: CSE;
+    Daffodil International University
+**/
+///**************************************
+#include<bits/stdc++.h>
+using namespace std;
+#include<stack>
+#include<vector>
+#include<map>
+#include<set>
+#include<queue>
+#include<list>
+typedef      long long               ll;
+typedef      long long int           lli;
+typedef      unsigned int            ui ;
+typedef      unsigned long long int  ulli;
+typedef      double                  D;
+typedef      float                   F;
+typedef      int                     I;
+#define      Clear(a) memset( a, 0, sizeof(a))
+#define      sc     scanf
+#define      pf     printf
+#define      Angle  360
+#define      AN     180
+#define      pb     push_back
+#define      pp     pop_back
+#define      t_r     true
+#define      f_r     false
+#define      PI    a(cos)
+#define      MIN(a,b) ((a) < (b) ? (a) : (b))
+#define      MAX(a,b) ((a) > (b) ? (a) : (b))
+#define      FOR(i , x, y ) for(  i = (x); i<=(y); i++ )
+#define      ROR(i , x, y ) for(  i = (x); i>=(y); i-- )
+ 
+I binaryTodecimal( lli number )
+{
+    I i = 0, reminder = 0, sum = 0;
+    while( number != 0 )
+    {
+        reminder = number % 10;
+ 
+        number = number /10;
+ 
+        sum += reminder*pow( 2, i++ );
+    }
+    return sum;
+}
+I main()
+{
+    lli a, b, c, d;
+    lli a1[1],a2[1],a3[1],a4[1];
+    lli b1[1],b2[1],b3[1],b4[1];
+    I tc;
+    cin>>tc;
+    for( I j = 1; j<= tc; j++ )
+    {
+        sc("%lld.%lld.%lld.%lld",&a,&b,&c,&d);
+        sc("%lld.%lld.%lld.%lld",&b1[0],&b2[0],&b3[0],&b4[0]);
+        a1[ 0 ] = binaryTodecimal( b1[ 0 ]);
+        a2[ 0 ] = binaryTodecimal( b2[ 0 ]);
+        a3[ 0 ] = binaryTodecimal( b3[ 0 ]);
+        a4[ 0 ] = binaryTodecimal( b4[ 0 ]);
+ 
+        if( a1[ 0 ] == a && a2[ 0 ] == b && a3[ 0 ] == c && a4[ 0 ] == d )
+        {
+            cout<<"Case"<<' '<<j<<":"<<' '<<"Yes"<<endl;
+        }
+        else
+            cout<<"Case"<<' '<<j<<":"<<' '<<"No"<<endl;
+    }
+    return 0;
+}
