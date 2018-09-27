@@ -1,0 +1,70 @@
+/*************************************
+/**
+           Sabuj sarker
+            def: CSE;
+    Daffodil International University
+**/
+///**************************************
+#include<bits/stdc++.h>
+using namespace std;
+#include<stack>
+#include<vector>
+#include<map>
+#include<set>
+#include<queue>
+#include<list>
+typedef      long long               ll;
+typedef      long long int           lli;
+typedef      unsigned int            ui ;
+typedef      unsigned long long int  ulli;
+typedef      double                  D;
+typedef      float                   F;
+typedef      int                     I;
+#define      Clear(a) memset( a, 0, sizeof(a))
+#define      sc       scanf
+#define      pf       printf
+#define      Angle    360
+#define      AN       180
+#define      pb       push_back
+#define      pp       pop_back
+#define      t_r      true
+#define      f_r      false
+#define      RR       1
+#define      ww       0
+#define      INF_MAX  147483647
+#define      INF_MIN  -147483647
+#define      Takeint(a)   scanf("%d",&a)
+#define      Test_case(t) for( int i = 1; i<= t; i++ )
+#define      PI acos(-1)
+#define      MIN(a,b) ((a) < (b) ? (a) : (b))
+#define      MAX(a,b) ((a) > (b) ? (a) : (b))
+#define      FOR(i , x, y ) for(  i = (x); i<=(y); i++ )
+#define      ROR(i , x, y ) for(  i = (x); i>=(y); i-- )
+#define      priority_queue<int,vector<int>,compare>pq;
+#define      Read(r)      freopen(r, "r", stdin)
+#define      Write(w)     freopen(w, "w", stdout)
+/***priorty_queue function***/
+/**sf("%I64d",&n);**/
+struct compare
+{
+   bool operator()(const int& I , const int& r)
+    {
+     return I > r;
+    }
+};
+I main()
+{
+   I t;
+   I r1, r2, h, p, i=1;
+   double R, V;
+   cin>>t;
+   for( int j = 1; j<= t; j++ )
+   {
+      cin>>r1>>r2>>h>>p;
+      R = r2 + ( r1 - r2 )*(double(p)/h*1.0);
+      V = 1.0/3.0*PI*p*( R*R + R*r2 + r2*r2);
+      pf("Case %d: %lf\n",j,V);
+   }
+   return 0;
+}
+ 
