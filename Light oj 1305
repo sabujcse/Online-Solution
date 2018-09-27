@@ -1,0 +1,158 @@
+/*************************************
+/**
+           Sabuj sarker
+            def: CSE;
+    Daffodil International University
+**/
+///**************************************
+#include<bits/stdc++.h>
+using namespace std;
+#include<stack>
+#include<vector>
+#include<map>
+#include<set>
+#include<queue>
+#include<list>
+typedef      long long               ll;
+typedef      long long int           lli;
+typedef      unsigned int            ui ;
+typedef      unsigned long long int  ulli;
+typedef      double                  D;
+typedef      float                   F;
+typedef      int                     I;
+#define      Clear(a) memset( a, 0, sizeof(a))
+#define      sc       scanf
+#define      pf       printf
+#define      Angle    360
+#define      AN       180
+#define      pb       push_back
+#define      pp       pop_back
+#define      t_r      true
+#define      f_r      false
+#define      RR       1
+#define      ww       0
+#define      INF_MAX  147483647
+#define      INF_MIN  -147483647
+#define      Takeint(a)   scanf("%d",&a)
+#define      Test_case(t) for( int i = 1; i<= t; i++ )
+#define      PI acos(-1)
+#define      MIN(a,b) ((a) < (b) ? (a) : (b))
+#define      MAX(a,b) ((a) > (b) ? (a) : (b))
+#define      FOR(i , x, y ) for(  i = (x); i<=(y); i++ )
+#define      ROR(i , x, y ) for(  i = (x); i>=(y); i-- )
+#define      priority_queue<int,vector<int>,compare>pq;
+#define      Read(r)      freopen(r, "r", stdin)
+#define      Write(w)     freopen(w, "w", stdout)
+#define      MAX_CHAR 256
+/***priorty_queue function***/
+/**sf("%I64d",&n);**/
+struct compare
+{
+   bool operator()(const int& I , const int& r)
+    {
+     return I > r;
+    }
+};
+/**(Function of trailing zero )
+ while( number )
+      {
+          count += number/5;
+          number = number/5;
+      }
+**/
+/**(Tautogram)
+{
+   string s;
+   while(getline(cin,s)&&s!="*")
+   {
+       char st = s[ 0 ];
+       st = tolower( st );
+       bool check = t_r;
+       for( int i = 0; i < s.size(); i++ )
+       {
+           if( s[ i ] == ' ')
+           {
+             if( st != tolower(s[ i + 1 ]))
+               {
+                  check = f_r;
+                  break;
+               }
+           }
+       }
+}
+**/
+/**Fnction to check if n is a multiple of 3**/
+/**
+I isMultipleof3( int n )
+{
+     int odd_count = 0;
+     int even_count = 0;
+     if( n < 0 ) n = -n;
+     if( n == 0 ) return 1;
+     if( n == 1 ) return 0;
+ 
+     while( n )
+     {
+         if( n & 1 )
+            odd_count++;
+         n = n>>1;
+         if( n & 1 )
+            even_count++;
+         n = n>>1;
+     }
+     return isMultipleof3(abs(odd_count - even_count));
+}
+**/
+/** ( Permutaion Rank )**/
+/**
+void PPIncreCount( int* count, char* str )
+{
+    for( int i = 0; str[ i ]; i++ )
+        ++count[ str[ i ]];
+    for( int i = 1; i < 256; i++ )
+        count[ i ] += count[ i - 1 ];
+}
+int fact ( int n )
+{
+    return(n<=1) ? 1:n *fact(n-1);
+}
+void updatecount( int* count, char ch )
+{
+    int i ;
+    for( int i = ch; i < MAX_CHAR; i++ )
+        --count[ i ];
+}
+int findRank( char* str )
+{
+    int len = strlen( str );
+    int mul = fact( len );
+    int rank = 1, i;
+    int count[ MAX_CHAR ] = { 0 };
+    PPIncreCount( count , str );
+    for( i = 0; i<len; i++ )
+    {
+        mul /= len - i;
+        rank += count [str[ i ] - 1 ] * mul;
+        updatecount( count ,str[ i ]);
+    }
+    return rank;
+}
+**/
+int main()
+{
+    int Test;
+    int Ax,Ay,Bx,By,Cx,Cy,Dx,Dy;
+    cin>>Test;
+    for( int i = 1; i<=Test; i++ )
+    {
+        cin>>Ax>>Ay>>Bx>>By>>Cx>>Cy;
+        Dx = ( Ax + Cx ) - Bx;
+        Dy = ( Ay + Cy ) - By;
+        I a = (((Ax*By)+(Bx*Cy)+(Cx*Dy)+(Dx*Ay)) - ((Ay*Bx)+(By*Cx)+(Cy*Dx)+(Dy*Ax)));
+        I area = a/2;
+        if( area < 0 )
+            area *= -1;
+        cout<<"Case"<<' '<<i<<":"<<' '<<Dx<<' '<<Dy<<' '<<(int)abs((double)area)<<endl;
+    }
+    return 0;
+}
